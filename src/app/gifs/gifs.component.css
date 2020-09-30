@@ -1,0 +1,10 @@
+.gif {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.gif img {
+    max-width: 250px;
+}
