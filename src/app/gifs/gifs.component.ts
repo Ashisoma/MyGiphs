@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { DataService } from '../data.service';
 
 @Component({
@@ -6,18 +7,21 @@ import { DataService } from '../data.service';
   templateUrl: './gifs.component.html',
   styleUrls: ['./gifs.component.css']
 })
-export class GifsComponent implements OnInit {
+export class GifsComponent implements OnInit, OnDestroy {
   
   gifs:any []=[];
-
+ subscription: Subscription
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.dataService.getMyGifs()
-    .subscribe((responce:any)=> {
-      this.gifs = responce.data;
+    this.subscription=this.dataService.getGifs()
+    .subscribe((response: any)=>{
+      this.gifs = response;
     })
   }
-
+ ngOnDestroy(){
+ this.subscription.unsubscribe();
+ }
 }

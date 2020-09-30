@@ -1,4 +1,4 @@
 <div class="look">
     <h3>Search</h3>
-    <input type="text" placeholder="Search for gifs">
+    <input type="text" placeholder="Search for gifs" #gif (keyup.enter)='search(gif.value)'>
 </div>
