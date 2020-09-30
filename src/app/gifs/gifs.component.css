@@ -1,7 +1,7 @@
-.gif {
+.gifs {
     display: grid;
     grid-template-columns: auto auto auto auto;
-    width: 100px;
+    width: 1000px;
     margin: 0 auto;
 }
 
