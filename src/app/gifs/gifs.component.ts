@@ -16,11 +16,17 @@ export class GifsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.dataService.getMyGifs()
+    this.dataService.reloadGifs()
     this.subscription=this.dataService.getGifs()
     .subscribe((response: any)=>{
       this.gifs = response;
     })
   }
+
+ reload(){
+   this.dataService.reloadGifs()
+ }
+
  ngOnDestroy(){
  this.subscription.unsubscribe();
  }
