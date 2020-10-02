@@ -5,6 +5,9 @@
     margin: 0 auto;
 }
 
-.gif img {
+.gif {
     max-width: 250px;
 }
+.section {
+     background-color: #006D77;
+ }
